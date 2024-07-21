@@ -34,6 +34,7 @@ app.use(xss());
 app.use(express.json());
 
 // Routes
+app.get('/ip', (request, response) => response.send(request.ip));
 app.use('/api/v1/auth', authRouter);
 // Load authentication middleware before jobsRouter to verify the token before creating/reading/updating/deleting the job!
 app.use('/api/v1/jobs', authentication, jobsRouter);
