@@ -21,7 +21,7 @@ const app = express();
 
 
 // Third-pary Middleware
-// app.set('trust proxy', 1); // https://express-rate-limit.mintlify.app/guides/troubleshooting-proxy-issues#the-global-limiter-problem
+app.set('trust proxy', 1); // https://express-rate-limit.mintlify.app/guides/troubleshooting-proxy-issues#the-global-limiter-problem
 app.use(rateLimit({
   windowMs: 15 * 60 * 1000, // Remember requests for 15 min
   limit: 5 // Limit each IP to 100 requests per 'window' (here, per 15 min)
